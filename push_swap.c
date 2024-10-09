@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "library/push_swap.h"
+
 
 t_stack	*ft_new_node(int j)
 {

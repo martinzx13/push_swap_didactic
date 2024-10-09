@@ -6,10 +6,7 @@ CC:=cc
 CFLAGS:= -Wall -Wextra -Werror
 
 #Sources Files, to run the project.
-SRC:= push_swap.c ft_split.c ft_error_display.c ft_libft_fun.c \
-	  ft_swap_instructions_a.c ft_swap_instructions_b.c ft_sort_algoritm.c \
-	  ft_utilities.c ft_rotate_calculation_a.c ft_rotate_calculation_b.c \
-	  ft_push.c ft_free.c ft_check_num.c
+SRC:= push_swap.c $(wildcard src/*.c)
 
 #some test cases for the Valgrind memory leack checker.
 ARG0:= "49 55 44 7 87 92 2 26 24 51 16 53 99 67 91 15 72 83 97 1"
@@ -36,7 +33,7 @@ $(NAME): $(OBJ)
 	@echo "$(GREEN) Succesfully Build $(NAME)$(NC) $(GREEN)[...ok]"
 
 #Rule to compile .c files to .o files 
-%.o: %.C
+%.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 # Rule to build all targets. 
